@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무명예술고등학교_test서버</title>
+</head>
+<!-- 서브 css-->
+    
+    <link rel="stylesheet" href="common/css/common.css">
+    <link rel="stylesheet" href="common/css/main.css">
+    <link rel="stylesheet" href="common/css/sub.css">
+    
+    
+    <!-- Swiper -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    
+<body>
+    <header class="header main">
+        <div class="inner">
+            <a class="logo" href="/"><img src="common/img/layout/logo_c.png" alt="logo" class="logo_c"> 
+            <img src="common/img/layout/logo_w.png" alt="logo" class="logo_w"></a> 
+            <div>
+                 <nav class="gnb">
+                    <ul class="main_menu">
+                        <li>
+                            <a href="#">학교소개</a>
+                            <ul class="sub_menu">
+                                <li><a href="#">인사말</a></li>
+                                <li><a href="#">연혁</a></li>
+                                <li><a href="#">오시는길</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">학과소개</a>
+                            <ul class="sub_menu">
+                                <li><a href="#">연기과</a></li>
+                                <li><a href="#">무용과</a></li>
+                                <li><a href="#">미술과</a></li>
+                                <li><a href="#">음악과</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="board/news.php">게시판</a>
+                            <ul class="sub_menu">
+                                <li><a href="">신문게시판</a></li>
+                                <li><a href="">공지사항</a></li>
+                                <a href="javascript:void(0);" onclick="checkPw()">비밀게시판테스트</a>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                        </div>
+
+        </div>
+    </header>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+
+    const menuItems = document.querySelectorAll(".main_menu > li");
+
+    menuItems.forEach(function(item) {
+
+        const subMenu = item.querySelector(".sub_menu");
+
+        item.addEventListener("mouseenter", function() {
+            subMenu.style.maxHeight = subMenu.scrollHeight + "px";
+        });
+
+        item.addEventListener("mouseleave", function() {
+            subMenu.style.maxHeight = "0";
+        });
+
+    });
+
+});
+</script>
+
+
+<!-- -->
+<main class="main">
+    <section class="visual">
+        <div class="slider">
+            <div class="slides">
+                <!--
+                <div class="slide">
+                    <img src="/common/img/main/main_visual01.png" alt="비주얼1">
+                </div>-->
+                <div class="slide">
+                    <h2 class="">
+                        <span>Mumyeong Arts High School</span>
+                        <p>타고난 재능, 압도적인 결과로</p><br> 
+                        <p>증명하는 無明人</p>
+                    </h2>
+                    <img src="common/img/main/main_visual04.png" alt="비주얼1">
+                </div>
+                
+                <div class="slide">
+                     <h2 class="">
+                        <span>Mumyeong Arts High School</span>
+                        <p>타고난 재능, 압도적인 결과로</p>
+                    </h2>
+                    <img src="common/img/main/main_visual02.png" alt="비주얼1">
+                </div>
+                <div class="slide">
+                     <h2 class="">
+                        <span>Mumyeong Arts High School</span>
+                        <p>타고난 재능, 압도적인 결과로</p>
+                    </h2>
+                    <img src="common/img/main/main_visual03.png" alt="비주얼1">
+                </div>
+            </div>
+            <!-- 좌우 화살표 -->
+            <button class="prev">
+                <svg width="41" height="90" viewBox="0 0 41 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="4.6875" cy="45" rx="2.1875" ry="2.5" fill="white"/>
+                <path d="M34.8333 3.5C34.8333 4.97276 36.0272 6.16667 37.5 6.16667C38.9728 6.16667 40.1667 4.97276 40.1667 3.5C40.1667 2.02724 38.9728 0.833333 37.5 0.833333C36.0272 0.833333 34.8333 2.02724 34.8333 3.5ZM4.25 45L3.8598 44.6874L3.60931 45L3.8598 45.3126L4.25 45ZM34.8333 86.5C34.8333 87.9728 36.0272 89.1667 37.5 89.1667C38.9728 89.1667 40.1667 87.9728 40.1667 86.5C40.1667 85.0272 38.9728 83.8333 37.5 83.8333C36.0272 83.8333 34.8333 85.0272 34.8333 86.5ZM37.5 3.5L37.1098 3.18737L3.8598 44.6874L4.25 45L4.6402 45.3126L37.8902 3.81263L37.5 3.5ZM4.25 45L3.8598 45.3126L37.1098 86.8126L37.5 86.5L37.8902 86.1874L4.6402 44.6874L4.25 45Z" fill="white"/>
+            </svg>
+
+            </button>
+                <button class="next"><svg width="41" height="90" viewBox="0 0 41 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="2.1875" cy="2.5" rx="2.1875" ry="2.5" transform="matrix(-1 0 0 1 37.6667 42.5)" fill="white"/>
+                <path d="M5.33335 3.5C5.33335 4.97276 4.13945 6.16667 2.66669 6.16667C1.19393 6.16667 2.28882e-05 4.97276 2.28882e-05 3.5C2.28882e-05 2.02724 1.19393 0.833333 2.66669 0.833333C4.13945 0.833333 5.33335 2.02724 5.33335 3.5ZM35.9167 45L36.3069 44.6874L36.5574 45L36.3069 45.3126L35.9167 45ZM5.33335 86.5C5.33335 87.9728 4.13945 89.1667 2.66669 89.1667C1.19393 89.1667 2.28882e-05 87.9728 2.28882e-05 86.5C2.28882e-05 85.0272 1.19393 83.8333 2.66669 83.8333C4.13945 83.8333 5.33335 85.0272 5.33335 86.5ZM2.66669 3.5L3.05689 3.18737L36.3069 44.6874L35.9167 45L35.5265 45.3126L2.27648 3.81263L2.66669 3.5ZM35.9167 45L36.3069 45.3126L3.05689 86.8126L2.66669 86.5L2.27648 86.1874L35.5265 44.6874L35.9167 45Z" fill="white"/>
+                </svg>
+            </button>
+        </div>
+    </section>
+</main>
+
+
+    <!--footer--->
+        <footer>
+           
+        </footer>
+</body>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+</html>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const slides = document.querySelector(".slides");
+  const slide = document.querySelectorAll(".slide");
+
+  // 클론 슬라이드 추가 (무한 루프용)
+  const firstClone = slide[0].cloneNode(true);
+  slides.appendChild(firstClone);
+
+  let currentIndex = 0;
+  const totalSlides = slide.length;
+
+  // 자동 슬라이드
+  //let slideInterval = setInterval(moveSlide, 5000);
+
+  function moveSlide() {
+    currentIndex++;
+    slides.style.transition = "transform 0.5s ease-in-out";
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    if (currentIndex === totalSlides) {
+      setTimeout(() => {
+        slides.style.transition = "none";
+        slides.style.transform = "translateX(0)";
+        currentIndex = 0;
+      }, 500);
+    }
+  }
+
+  function prevSlide() {
+    if (currentIndex === 0) {
+      slides.style.transition = "none";
+      slides.style.transform = `translateX(-${totalSlides * 100}%)`;
+      currentIndex = totalSlides - 1;
+      setTimeout(() => {
+        slides.style.transition = "transform 0.5s ease-in-out";
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }, 20);
+    } else {
+      currentIndex--;
+      slides.style.transition = "transform 0.5s ease-in-out";
+      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+  }
+
+  document.querySelector(".next").addEventListener("click", () => {
+    moveSlide();
+    resetInterval();
+  });
+  document.querySelector(".prev").addEventListener("click", () => {
+    prevSlide();
+    resetInterval();
+  });
+
+  // 클릭 후 자동 슬라이드 초기화
+  function resetInterval() {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(moveSlide, 3000);
+  }
+});
+</script>

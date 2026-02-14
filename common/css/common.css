@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Yuji+Syuku&family=Zen+Kurenaido&display=swap');
+/*font-family: "Zen Kurenaido", sans-serif; font-family: "Yuji Syuku", serif; font-family: "Noto Sans", sans-serif;*/
+/* 기본 CSS 초기화 세팅 */
+* {
+  box-sizing: border-box; 
+  margin: 0;              
+  padding: 0;             
+}
+
+/* 폰트 및 리스트 스타일 초기화 */
+body {
+  line-height: 1;
+  font-family: "Noto Sans", sans-serif;
+  color: #121212;
+  background: #121212;
+}
+ul, ol, li {
+  list-style: none; 
+}
+a {
+  text-decoration: none; 
+  color: inherit;
+}
+img {
+  vertical-align: top;  
+}
+
+
+/**/
+:root {
+    --header-height: 80px;
+
+    --main-color: #A12A2A;
+}
+
+/*font-size*/
+:root { 
+    --font-size-14: clamp(12px, 0.9vw, 14px);
+    --font-size-16: clamp(14px, 1vw, 16px);
+    --font-size-18: clamp(16px, 1.2vw, 18px);
+    --font-size-24: clamp(20px, 1.6vw, 24px);
+    --font-size-36: clamp(28px, 2.5vw, 36px);
+    --font-size-48: clamp(36px, 3.5vw, 48px);
+    --font-size-60: clamp(44px, 4.5vw, 60px);
+    --font-size-72: clamp(52px, 5.5vw, 72px);
+}
+
