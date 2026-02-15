@@ -1,5 +1,5 @@
 /*메뉴 마우스오버_web*/
-document.addEventListener("DOMContentLoaded", function() {
+/*document.addEventListener("DOMContentLoaded", function() {
 
     const menuItems = document.querySelectorAll(".main_menu > li");
 
@@ -17,50 +17,49 @@ document.addEventListener("DOMContentLoaded", function() {
 
     });
 
-});
+});*/
 
-/*메뉴 클릭시*/
 document.addEventListener("DOMContentLoaded", function () {
 
     const menuItems = document.querySelectorAll(".main_menu > li");
-
-    function isTablet() {
-        return window.innerWidth <= 1024;
-    }
+    const mediaQuery = window.matchMedia("(max-width: 1024px)");
 
     menuItems.forEach(function (item) {
 
-        const subMenu = item.querySelector(".sub_menu");
         const mainLink = item.querySelector(":scope > a");
+        const subMenu = item.querySelector(".sub_menu");
 
         if (!subMenu) return;
 
         /* ======================
-           💻 PC (hover)
+           💻 PC (1025px 이상)
         ====================== */
         item.addEventListener("mouseenter", function () {
-            if (!isTablet()) {
+            if (!mediaQuery.matches) {
                 subMenu.style.maxHeight = subMenu.scrollHeight + "px";
             }
         });
 
         item.addEventListener("mouseleave", function () {
-            if (!isTablet()) {
+            if (!mediaQuery.matches) {
                 subMenu.style.maxHeight = "0";
             }
         });
 
         /* ======================
-           📱 태블릿 이하 (click)
+           📱 태블릿 이하 (클릭)
         ====================== */
         mainLink.addEventListener("click", function (e) {
-            if (isTablet()) {
-                e.preventDefault(); // 🔥 링크 이동 막기
 
-                const isOpen = subMenu.style.maxHeight && subMenu.style.maxHeight !== "0px";
+            if (mediaQuery.matches) {
 
-                // 다른 메뉴 닫기 (아코디언 방식)
-                document.querySelectorAll(".sub_menu").forEach(function (menu) {
+                e.preventDefault(); // 🔥 이동 차단
+
+                const isOpen = subMenu.style.maxHeight &&
+                               subMenu.style.maxHeight !== "0px";
+
+                // 다른 메뉴 닫기
+                document.querySelectorAll(".sub_menu").forEach(menu => {
                     menu.style.maxHeight = "0";
                 });
 
@@ -73,4 +72,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-});
+});11
