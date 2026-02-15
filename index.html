@@ -5,82 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>무명예술고등학교</title>
 </head>
+
 <!-- 서브 css-->
-    
-    <link rel="stylesheet" href="common/css/common.css">
-    <link rel="stylesheet" href="common/css/main.css">
-    <link rel="stylesheet" href="common/css/sub.css">
-    
-    
-    <!-- Swiper -->
-    <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
-    />
-    
+<link rel="stylesheet" href="common/css/common.css">
+<link rel="stylesheet" href="common/css/main.css">
+<link rel="stylesheet" href="common/css/sub.css">
+
+
+<!-- Swiper -->
+<link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+/>
+<!--script-->
+<script src="common/common.js" defer></script>
+<script src="common/main.js"></script>
+<script src="common/sub.js"></script>
+
+
 <body>
-    <header class="header main">
-        <div class="inner">
-            <a class="logo" href="/"><img src="common/img/layout/logo_c.png" alt="logo" class="logo_c"> 
-            <img src="common/img/layout/logo_w.png" alt="logo" class="logo_w"></a> 
-            <div>
-                 <nav class="gnb">
-                    <ul class="main_menu">
-                        <li>
-                            <a href="#">학교소개</a>
-                            <ul class="sub_menu">
-                                <li><a href="#">인사말</a></li>
-                                <li><a href="#">연혁</a></li>
-                                <li><a href="#">오시는길</a></li>
-                            </ul>
-                        </li>
+<!--heder-->
+<header class="header main">
+    <div class="inner">
+        <a class="logo" href="index.html"><img src="common/img/layout/logo_c.png" alt="logo" class="logo_c"> 
+        <img src="common/img/layout/logo_w.png" alt="logo" class="logo_w"></a> 
+        <div>
+                <nav class="gnb">
+                <ul class="main_menu">
+                    <li>
+                        <a href="about/greeting.html">학교소개</a>
+                        <ul class="sub_menu">
+                            <li><a href="about/greeting.html">인사말</a></li>
+                            <li><a href="about/history.html">연혁</a></li>
+                            <li><a href="about/location.html">오시는길</a></li>
+                        </ul>
+                    </li>
 
-                        <li>
-                            <a href="#">학과소개</a>
-                            <ul class="sub_menu">
-                                <li><a href="#">연기과</a></li>
-                                <li><a href="#">무용과</a></li>
-                                <li><a href="#">미술과</a></li>
-                                <li><a href="#">음악과</a></li>
-                            </ul>
-                        </li>
+                    <li>
+                        <a href="department/acting.html">학과소개</a>
+                        <ul class="sub_menu">
+                            <li><a href="department/acting.html">연기과</a></li>
+                            <li><a href="department/dance.html">무용과</a></li>
+                            <li><a href="department/art.html">미술과</a></li>
+                            <li><a href="department/music.html">음악과</a></li>
+                        </ul>
+                    </li>
 
-                        <li>
-                            <a href="board/news.php">게시판</a>
-                            <ul class="sub_menu">
-                                <li><a href="">신문게시판</a></li>
-                                <li><a href="">공지사항</a></li>
-                                <a href="javascript:void(0);" onclick="checkPw()">비밀게시판테스트</a>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-                        </div>
+                    <li>
+                        <a href="board/general.html">게시판</a>
+                        <ul class="sub_menu">
+                            <li><a href="board/general.html">일반게시판</a></li>
+                            <li><a href="board/notice.html">공지사항</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+                    </div>
 
-        </div>
-    </header>
+    </div>
+</header>
+<!--heder 끝-->
 
-    <script>
-document.addEventListener("DOMContentLoaded", function() {
-
-    const menuItems = document.querySelectorAll(".main_menu > li");
-
-    menuItems.forEach(function(item) {
-
-        const subMenu = item.querySelector(".sub_menu");
-
-        item.addEventListener("mouseenter", function() {
-            subMenu.style.maxHeight = subMenu.scrollHeight + "px";
-        });
-
-        item.addEventListener("mouseleave", function() {
-            subMenu.style.maxHeight = "0";
-        });
-
-    });
-
-});
-</script>
+  
 
 
 <!-- -->
@@ -92,28 +78,26 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="slide">
                     <img src="/common/img/main/main_visual01.png" alt="비주얼1">
                 </div>-->
-                <div class="slide">
-                    <h2 class="">
+                <div class="slide bg01">
+                    <h2 class="" >
                         <span>Mumyeong Arts High School</span>
                         <p>타고난 재능, 압도적인 결과로</p><br> 
                         <p>증명하는 無明人</p>
                     </h2>
-                    <img src="common/img/main/main_visual04.png" alt="비주얼1">
                 </div>
                 
-                <div class="slide">
+                <div class="slide bg02">
                      <h2 class="">
                         <span>Mumyeong Arts High School</span>
                         <p>타고난 재능, 압도적인 결과로</p>
                     </h2>
-                    <img src="common/img/main/main_visual02.png" alt="비주얼1">
                 </div>
-                <div class="slide">
+                <div class="slide bg03">
                      <h2 class="">
                         <span>Mumyeong Arts High School</span>
                         <p>타고난 재능, 압도적인 결과로</p>
                     </h2>
-                    <img src="common/img/main/main_visual03.png" alt="비주얼1">
+                    
                 </div>
             </div>
             <!-- 좌우 화살표 -->
@@ -134,10 +118,22 @@ document.addEventListener("DOMContentLoaded", function() {
 </main>
 
 
-    <!--footer--->
-        <footer>
-           
-        </footer>
+<!--footer--->
+<footer class="footer">
+    <div class="inner">
+        <div class="left_area"> 
+            <a href="index.html" class="footerlogo"><img src="common/img/layout/logo_w.png" alt="logo" class="logo_w"></a>
+            <ul>
+                <li><strong>ADDRESS :</strong> 서울특별시 은평구 무명로 35, 무명예술고등학교</li><!--서울특별시 은평구 무명동 35-1-->
+                <li><strong>TEL :</strong> 010-xxxx-xxxx  l <strong>MAIL :</strong>  mumyeongarts@xxxxx.xx</li>
+                <li></li>
+            </ul> 
+        </div>
+        <div class="right_area">
+            <a href="https://band.us/n/a1a3bcXcofY9O" target="_blank" class="fotbtn">Family site +</a>
+        </div>
+    </div>
+</footer>
 </body>
 
 <!-- Swiper JS -->
@@ -145,65 +141,3 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </html>
 
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const slides = document.querySelector(".slides");
-  const slide = document.querySelectorAll(".slide");
-
-  // 클론 슬라이드 추가 (무한 루프용)
-  const firstClone = slide[0].cloneNode(true);
-  slides.appendChild(firstClone);
-
-  let currentIndex = 0;
-  const totalSlides = slide.length;
-
-  // 자동 슬라이드
-  //let slideInterval = setInterval(moveSlide, 5000);
-
-  function moveSlide() {
-    currentIndex++;
-    slides.style.transition = "transform 0.5s ease-in-out";
-    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-    if (currentIndex === totalSlides) {
-      setTimeout(() => {
-        slides.style.transition = "none";
-        slides.style.transform = "translateX(0)";
-        currentIndex = 0;
-      }, 500);
-    }
-  }
-
-  function prevSlide() {
-    if (currentIndex === 0) {
-      slides.style.transition = "none";
-      slides.style.transform = `translateX(-${totalSlides * 100}%)`;
-      currentIndex = totalSlides - 1;
-      setTimeout(() => {
-        slides.style.transition = "transform 0.5s ease-in-out";
-        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-      }, 20);
-    } else {
-      currentIndex--;
-      slides.style.transition = "transform 0.5s ease-in-out";
-      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-  }
-
-  document.querySelector(".next").addEventListener("click", () => {
-    moveSlide();
-    resetInterval();
-  });
-  document.querySelector(".prev").addEventListener("click", () => {
-    prevSlide();
-    resetInterval();
-  });
-
-  // 클릭 후 자동 슬라이드 초기화
-  function resetInterval() {
-    clearInterval(slideInterval);
-    slideInterval = setInterval(moveSlide, 3000);
-  }
-});
-</script>
