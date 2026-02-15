@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const totalSlides = slide.length;
 
   // 자동 슬라이드
-  //let slideInterval = setInterval(moveSlide, 5000);
+  let slideInterval = setInterval(moveSlide, 5000);
 
   function moveSlide() {
     currentIndex++;
