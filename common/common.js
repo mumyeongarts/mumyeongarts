@@ -72,4 +72,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-});11
+});
+
+/**/
+
+
+$(document).ready(function() {
+    $("#accordion").accordion({
+        heightStyle: "content",
+        active:false,
+        collapsible: true
+    });
+
+    $("#btn").click(function() {
+        $("#accordion").animate({ "left":"0" },"fast");
+        $("#cover").css({ "display":"block" });
+        $("body").css({ "overflow-y":"hidden" });
+    });
+
+    $("#cover").click(function() {
+        $("#accordion").animate({ "left":"-251px" },"fast");
+        $("#cover").css({ "display":"none" });
+        $("body").css({ "overflow-y":"auto" });
+    });
+});		
