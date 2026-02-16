@@ -1,9 +1,3 @@
-/*news*/
-.news {width: 100vw; height: 100vh;}
-.news .section01 {width: 100%; height: 100%; background-image: url("/common/img/sub/news_bg.png"); background-repeat: no-repeat;background-position: center; background-size: cover;}
-
-
-
 .sub_visual {position: relative; width: 100%;  height: 550px; background: url("../img/main/main_visual04.png") center / cover no-repeat;}
 .sub_visual .visual_txt {/*padding-top: var(--header-height);*/ height: 100%; display: flex; align-items: center; justify-content: center;}
 .sub_visual .visual_txt .inner {text-align: center;}
@@ -97,3 +91,9 @@
 .board_all_in ul { width: 100%; border-top: 2px solid var(--main-color);}
 .board_all_in ul .title{padding: clamp(30px, 17.7273px + 3.4091vw, 60px) 20px; border-bottom: 1px solid #ddd;}
 .board_all_in ul .title h3 {font-size: var(--font-size-24); text-align: center;}
+.board_all_in .contentbox {width: 100%;padding: clamp(30px, 17.7273px + 3.4091vw, 60px) 20px; border-bottom: 1px solid #ddd;}
+.board_all_in .contentbox .img_100 {max-width: 100%;}
+.board_all_in .listbtn {display: flex;justify-content: center; align-items: center; margin: clamp(30px, 17.7273px + 3.4091vw, 60px) auto 0 auto; padding: 15px 20px; width: 160px; background: var(--main-color); color: #fff;border-radius: 10px;}
+
+.board_all_in .contentbox p {color: #121212; font-size: var(--font-size-18); line-height: 1.3; }
+.board_all_in .contentbox p span {color: var(--main-color);}
