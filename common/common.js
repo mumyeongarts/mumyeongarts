@@ -18,81 +18,116 @@
     });
 
 });*/
-
 document.addEventListener("DOMContentLoaded", function () {
 
     const menuItems = document.querySelectorAll(".main_menu > li");
-    const mediaQuery = window.matchMedia("(max-width: 1024px)");
 
-    menuItems.forEach(function (item) {
+    function setMenuEvent() {
 
-        const mainLink = item.querySelector(":scope > a");
-        const subMenu = item.querySelector(".sub_menu");
+        const isDesktop = window.innerWidth >= 1366;
 
-        if (!subMenu) return;
-
-        /* ======================
-           💻 PC (1025px 이상)
-        ====================== */
-        item.addEventListener("mouseenter", function () {
-            if (!mediaQuery.matches) {
-                subMenu.style.maxHeight = subMenu.scrollHeight + "px";
-            }
+        // 모든 서브메뉴 초기화
+        document.querySelectorAll(".sub_menu").forEach(function (menu) {
+            menu.style.maxHeight = "0";
         });
 
-        item.addEventListener("mouseleave", function () {
-            if (!mediaQuery.matches) {
-                subMenu.style.maxHeight = "0";
-            }
+        menuItems.forEach(function (item) {
+
+            const subMenu = item.querySelector(".sub_menu");
+            const title = item.querySelector(".menu_title");
+
+            if (!subMenu || !title) return;
+
+            // 기존 이벤트 제거용
+            title.replaceWith(title.cloneNode(true));
         });
 
-        /* ======================
-           📱 태블릿 이하 (클릭)
-        ====================== */
-        mainLink.addEventListener("click", function (e) {
+        // 다시 선택 (clone 했으니까 재선택)
+        const newItems = document.querySelectorAll(".main_menu > li");
 
-            if (mediaQuery.matches) {
+        newItems.forEach(function (item) {
 
-                e.preventDefault(); // 🔥 이동 차단
+            const subMenu = item.querySelector(".sub_menu");
+            const title = item.querySelector(".menu_title");
 
-                const isOpen = subMenu.style.maxHeight &&
-                               subMenu.style.maxHeight !== "0px";
+            if (!subMenu || !title) return;
 
-                // 다른 메뉴 닫기
-                document.querySelectorAll(".sub_menu").forEach(menu => {
-                    menu.style.maxHeight = "0";
+            if (isDesktop) {
+                // 🖥 데스크탑 → hover
+                item.addEventListener("mouseenter", function () {
+                    subMenu.style.maxHeight = subMenu.scrollHeight + "px";
                 });
 
-                // 현재 메뉴 열기
-                if (!isOpen) {
-                    subMenu.style.maxHeight = subMenu.scrollHeight + "px";
-                }
-            }
-        });
+                item.addEventListener("mouseleave", function () {
+                    subMenu.style.maxHeight = "0";
+                });
 
+            } else {
+                // 📱 태블릿/모바일 → click
+                title.addEventListener("click", function (e) {
+
+                    e.preventDefault(); // 타이틀만 막기
+
+                    const isOpen = subMenu.style.maxHeight;
+
+                    // 아코디언 방식
+                    document.querySelectorAll(".sub_menu").forEach(function (menu) {
+                        menu.style.maxHeight = "0";
+                    });
+
+                    if (!isOpen || isOpen === "0px") {
+                        subMenu.style.maxHeight = subMenu.scrollHeight + "px";
+                    } else {
+                        subMenu.style.maxHeight = "0";
+                    }
+                });
+            }
+
+        });
+    }
+
+    setMenuEvent();
+
+    window.addEventListener("resize", function () {
+        setMenuEvent();
     });
 
 });
 
+
 /**/
 
-
 $(document).ready(function() {
-    $("#accordion").accordion({
+
+    $(".m_accordion").accordion({
         heightStyle: "content",
-        active:false,
+        active: false,
         collapsible: true
     });
 
-    $("#btn").click(function() {
-        $("#accordion").animate({ "left":"0" },"fast");
-        $("#cover").css({ "display":"block" });
-        $("body").css({ "overflow-y":"hidden" });
+    // 메뉴 열기
+    $(".m_btn").click(function() {
+        $(".m_accordion").animate({ left: "0" }, "fast");
+        $(".m_cover").fadeIn(200);
+        $("body").css({ overflow: "hidden" });
     });
 
-    $("#cover").click(function() {
-        $("#accordion").animate({ "left":"-251px" },"fast");
-        $("#cover").css({ "display":"none" });
-        $("body").css({ "overflow-y":"auto" });
+    // 메뉴 닫기 함수
+    function menuClose() {
+        $(".m_accordion").animate({ left: "-300px" }, "fast");
+        $(".m_cover").fadeOut(200);
+        $("body").css({ overflow: "auto" });
+    }
+
+    // 배경 클릭 시 닫기
+    $(".m_cover").click(function() {
+        menuClose();
     });
-});		
+
+    // X 버튼 클릭 시 닫기 (버블링 방지)
+    $(".m_close").click(function(e) {
+        e.stopPropagation();
+        menuClose();
+    });
+
+});
