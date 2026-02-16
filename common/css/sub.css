@@ -59,3 +59,41 @@
     .location .location_in .right_area .text {height: 60px;  margin: clamp(20px, 15.9091px + 1.1364vw, 30px) 0;
     flex: inherit;}
 }
+
+
+/*board_all*/
+.board_all { width: 100%; border-top: 2px solid var(--main-color);}
+.board_all div {padding: 20px 15px; height: 60px; display: flex; align-items: center; justify-content: center; color: #666;}
+.board_all .list_head div { font-weight: 600; font-size: var(--font-size-18);  color: var(--main-color);}
+.board_all .list_head {display: flex;border-bottom: 1px solid #ddd; background: #f3efef;}
+.board_all .nem {width: 10%;}
+.board_all .tit {flex: 1; color: #121212;}
+.board_all .author {width: 15%;}
+.board_all .date{width: 15%;}
+
+.board_all a {display: flex; border-bottom: 1px solid #ddd;}
+.board_all a .tit {font-weight: 600;justify-content: flex-start; transition: 0.3s;}
+.board_all a div {font-size: var(--font-size-18);}
+.board_all a:hover .tit{ color: var(--main-color);}
+.board_all a span {display: none;}
+
+
+@media (max-width: 720px) {
+    .board_all .list_head {display: none;}
+    .board_all div {justify-content: flex-start;    padding: 8px 0;
+    height: auto;}
+    .board_all a {padding: 20px; flex-wrap: wrap}
+    .board_all a .nem {width: 100%;}
+    .board_all .tit {flex: inherit; width: 100%;}
+.board_all .author {width: auto; }
+.board_all .date{width: auto;}
+.board_all a span {display: block; margin-right: 5px; font-weight: 600;}
+.board_all a div {font-size: var(--font-size-14);} 
+.board_all a .tit {font-size: var(--font-size-18);}
+.board_all a .author {margin-right: 10px;}
+
+}
+
+.board_all_in ul { width: 100%; border-top: 2px solid var(--main-color);}
+.board_all_in ul .title{padding: clamp(30px, 17.7273px + 3.4091vw, 60px) 20px; border-bottom: 1px solid #ddd;}
+.board_all_in ul .title h3 {font-size: var(--font-size-24); text-align: center;}
