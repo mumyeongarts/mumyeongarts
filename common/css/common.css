@@ -40,6 +40,7 @@ img {
     --font-size-18: clamp(16px, 1.2vw, 18px);
     --font-size-24: clamp(20px, 1.6vw, 24px);
     --font-size-36: clamp(28px, 2.5vw, 36px);
+    --font-size-38: clamp(30px, 2.7vw, 38px);
     --font-size-48: clamp(36px, 3.5vw, 48px);
     --font-size-60: clamp(44px, 4.5vw, 60px);
     --font-size-72: clamp(52px, 5.5vw, 72px);

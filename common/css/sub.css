@@ -19,7 +19,8 @@
 .sub_visual .sublab ul li:hover a {color: var(--main-color); font-weight: 600;}
 
 .sub_wrap { padding:  clamp(80px, 63.6364px + 4.5455vw, 120px) 0;} 
-
+.sub_wrap .subconimg {max-width: 100%;}
+.sub_wrap .mimg{display: none;} 
 /*1350*/
 @media (max-width: 1350px) {
    .sub_visual {height: 450px;}
@@ -29,5 +30,32 @@
 @media (max-width: 720px) {
     .sub_visual {height: 350px;}
     .sub_visual .sublab ul li a {padding: 20px 3px;}
+    .sub_wrap .mimg{display: block;} 
+    .sub_wrap .webimg {display: none;}
 }
 
+
+/*오시는 길*/
+.location .location_in {display: flex; /*flex-direction: column-reverse;*/    flex-direction: column;}
+.location .location_in .leftarea {width: 100%;}
+.location .location_in .leftarea iframe {width:100%;height: 400px;}
+.location .location_in .leftarea {}
+
+.location .location_in .right_area {  margin-top: clamp(30px, 17.7273px + 3.4091vw, 60px); display: flex; flex-direction: row; /*padding:clamp(20px, 15.9091px + 1.1364vw, 30px) 0 0  clamp(30px, 17.7273px + 3.4091vw, 60px);*/}
+.location .location_in .right_area h3 {font-size: var(--font-size-38); line-height: 1.3;}
+.location .location_in .right_area .text{flex: 1; height: 80px; margin-left: clamp(20px, 15.9091px + 1.1364vw, 30px); position: relative;}
+.location .location_in .right_area .text p {display: flex; align-items: center; width: 100%; height: 100%; padding: 20px 30px; border: 1px solid var(--main-color);color: var(--main-color);  position: absolute;  left: 0; transition: 0.3s; border-radius: 10px;}
+.location .location_in .right_area .text p i { margin-right: 10px;}
+.location .location_in .right_area .text p:hover {background: var(--main-color); color: #fff;}
+.location .location_in .right_area .text .cheage {}
+.location .location_in .right_area .text .cheage2 {opacity: 0;}
+.location .location_in .right_area .text:hover .cheage {opacity: 0;}
+.location .location_in .right_area .text:hover .cheage2 {opacity: 1;}
+
+@media (max-width: 720px) {
+    .only_pc {display: none;}
+    .location .location_in {flex-direction: column-reverse; }
+    .location .location_in .right_area {margin-bottom: clamp(30px, 17.7273px + 3.4091vw, 60px); margin-top: 0; flex-direction: column;}
+    .location .location_in .right_area .text {height: 60px;  margin: clamp(20px, 15.9091px + 1.1364vw, 30px) 0;
+    flex: inherit;}
+}
